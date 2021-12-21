@@ -1,0 +1,31 @@
+.headerContianer{
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerText{
+  margin: 0px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 34px;
+  color: #FFFFFF;
+}
+
+.addButton{
+  width: 54px;
+  height: 27px;
+  background: #FF8469;
+  border: 0px none;
+  border-radius: 7px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}

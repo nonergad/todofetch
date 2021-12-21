@@ -1,0 +1,74 @@
+.taskLine{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.titleContainer{
+  margin-left: 15px;
+}
+
+.mainTitle{
+  margin: 0px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+}
+.mainTitleChecked{
+  margin: 0px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  text-decoration-line: line-through;
+}
+
+.lowerTitle{
+  margin: 0px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #4F5565;
+}
+
+.CheckBox{
+  display: none;
+}
+
+.BlankCheckBox{
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background: #4F5565;
+}
+
+.BlankCheckBox:hover{
+  background: #FF846933;
+}
+
+.BlankCheckBox::before{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: block;
+  background: url(../../../../img/checkBoxActive.svg) no-repeat center / contain;
+  opacity: 0;
+  transition: 10ms;
+}
+
+.CheckBox:checked + .BlankCheckBox::before{
+  opacity: 1;
+}
