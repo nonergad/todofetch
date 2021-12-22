@@ -32,7 +32,6 @@ function Main(props) {
                 return elem
             }
         })
-        console.log(newArr)
         setData(newArr)
     }
 
@@ -54,6 +53,7 @@ function Main(props) {
             </div>
             <div className={styles.secondBlockBack}/>
             <div className={styles.thirdBlockBack}/>
+            <div className={styles.Author}>© 2021. Author Name</div>
         </div>
     );
 }
