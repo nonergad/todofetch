@@ -2,8 +2,6 @@ import React, {useEffect, useState} from 'react';
 import styles from './TaskLine.module.scss'
 import classNames from "classnames";
 function TaskLine(props) {
-
-    console.log(props.data)
     return (
         <div className={styles.taskLine} onClick={() => props.changeCompleted(props.data.id)}>
             <label>

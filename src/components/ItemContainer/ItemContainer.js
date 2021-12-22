@@ -9,31 +9,31 @@ function Main(props) {
     useEffect(() => {
       fetch('https://jsonplaceholder.typicode.com/todos')
           .then((res) => res.json())
-          .then((data) => setData(data))
-          .then(() => addSubtitleData())
+          .then((data) => addSubtitleData(data))
     },[])
 
     const generateTitle = (arr) => {
         const rand = Math.floor(Math.random() * 4) + 1;
         if (rand === 1) {
             const randTitle = Math.floor(Math.random() * data.length - 1) + 1;
-            return data[randTitle].title
+            return arr[randTitle].title
         }
         return false
     }
 
-    const addSubtitleData = () => {
-        let copyData = [...data]
-        copyData = copyData.map((elem) => {
-            let subtitle = generateTitle()
+    const addSubtitleData = (arr) => {
+        const newArr = arr.map((elem) => {
+            let subtitle = generateTitle(arr)
             if(subtitle){
                 elem.subtitle = subtitle
+                return elem
             } else {
                 elem.subtitle = ''
+                return elem
             }
         })
-        console.log(copyData)
-        setData(copyData)
+        console.log(newArr)
+        setData(newArr)
     }
 
     const changeCompleted = (id) => {
@@ -50,7 +50,7 @@ function Main(props) {
         <div className={styles.divContainer}>
             <div className={styles.itemContainer}>
                 <Header/>
-                <TaskContainer generateTitle={generateTitle} changeCompleted={changeCompleted}  data={data}/>
+                <TaskContainer changeCompleted={changeCompleted}  data={data}/>
             </div>
             <div className={styles.secondBlockBack}/>
             <div className={styles.thirdBlockBack}/>
