@@ -20,11 +20,11 @@
 
 .secondBlockBack{
   position: absolute;
-  top: -20px;
+  top: -15px;
   left: 2px;
   z-index: 500;
   transform: rotate(-2.32deg);
-  width: 445px;
+  width: 395px;
   height: 65px;
   background: #31394D;
   border-radius: 20px;
@@ -32,13 +32,13 @@
 
 .thirdBlockBack{
   position: absolute;
-  top: -32px;
+  top: -25px;
   left: 2px;
   z-index: 300;
   background: #4F5565;
   border-radius: 20px;
   transform: rotate(-4.48deg);
-  width: 400px;
+  width: 341px;
   height: 65px;
 
 }
@@ -53,7 +53,7 @@
 
 @media screen and (max-width: 428px) {
   .itemContainer{
-    width: auto;
+    width: 397px;
   }
 
   .secondBlockBack{
