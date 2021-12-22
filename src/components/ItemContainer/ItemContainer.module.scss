@@ -1,12 +1,40 @@
 .divContainer{
-
+  position: relative;
 }
 
+
 .itemContainer{
+  position: relative;
+  z-index: 1000;
   width: 420px;
   height: 540px;
   padding: 30px;
   background: #252E42;
   box-shadow: 0px 14px 34px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+}
+
+.secondBlockBack{
+  position: absolute;
+  top: -20px;
+  left: 2px;
+  z-index: 500;
+  transform: rotate(-2.32deg);
+  width: 445px;
+  height: 65px;
+  background: #31394D;
+  border-radius: 20px;
+}
+
+.thirdBlockBack{
+  position: absolute;
+  top: -32px;
+  left: 2px;
+  z-index: 300;
+  background: #4F5565;
+  border-radius: 20px;
+  transform: rotate(-4.48deg);
+  width: 400px;
+  height: 65px;
+
 }

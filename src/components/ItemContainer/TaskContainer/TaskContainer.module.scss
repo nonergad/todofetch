@@ -1,0 +1,8 @@
+.container{
+  overflow-y: scroll;
+  height: 426px;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}

@@ -1,17 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import styles from './TaskLine.module.scss'
+import classNames from "classnames";
 function TaskLine(props) {
-    const [flag, setFlag] = useState(false)
 
+    console.log(props.data)
     return (
-        <div className={styles.taskLine}>
+        <div className={styles.taskLine} onClick={() => props.changeCompleted(props.data.id)}>
             <label>
-                <input type="checkbox" className={styles.CheckBox} onChange={() => setFlag(!flag)} />
-                <span className={styles.BlankCheckBox}></span>
+                <input type="checkbox"  className={classNames(styles.CheckBox, props.data.completed && styles.activeCheck)} onChange={() => props.changeCompleted(props.data.id)} />
+                <div className={styles.BlankCheckBox}></div>
             </label>
             <div className={styles.titleContainer}>
-                <p className={flag ? styles.mainTitleChecked : styles.mainTitle }>Первая строка</p>
-                <p className={flag ? styles.lowerTitle : styles.lowerTitle }>Вторая строка</p>
+                <p className={props.data.completed ? styles.mainTitleChecked : styles.mainTitle }>{props.data.title}</p>
+                {props.data.subtitle && <p className={props.data.completed ? styles.lowerTitleChecked : styles.lowerTitle}>{props.data.subtitle}</p>}
             </div>
         </div>
     );

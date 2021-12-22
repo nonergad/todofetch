@@ -1,19 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import TaskLine from './TaskLine/TaskLine.js'
+import styles from './TaskContainer.module.scss'
 function TaskContainer(props) {
-    const [rend, setRend] = useState([])
-    useEffect(()=>{
-        let arr = [];
-        for (let i = 0; i<19; i++){
-            arr.push(props.data[i])
-        }
-        setRend(arr)
-    },[])
+    let subtitle = props.generateTitle()
+
     return (
-        <div>
-            {rend.map(element => {
+        <div className={styles.container}>
+            {props.data.map((element, index) => {
                 return(
-                    <TaskLine data={element}/>
+                    <TaskLine generateTitle={props.generateTitle} changeCompleted={props.changeCompleted} key={element ? element.id : index} data={element}/>
                 )
             })}
         </div>
